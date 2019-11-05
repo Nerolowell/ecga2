@@ -1,0 +1,57 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <form #productoForm="ngForm"(ngSubmit)="onSubmit(productoForm)">
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productoService.selectedProducto.$key">
+            
+          <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="nombre"
+                #name="ngModel"
+                [(ngModel)]="productoService.selectedProducto.nombre"
+                placeholder="Agrega el nombre del producto"
+              >
+          </div>
+          <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="categoria"
+                  #name="ngModel"
+                  [(ngModel)]="productoService.selectedProducto.categoria"
+                  placeholder="Agrega una categoría"
+                >
+            </div>
+            <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="marca"
+                      #name="ngModel"
+                      [(ngModel)]="productoService.selectedProducto.marca"
+                      placeholder="Agrega una marca"
+                    >
+            </div>
+            <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="precio"
+                      #name="ngModel"
+                      [(ngModel)]="productoService.selectedProducto.precio"
+                      placeholder="Agrega un precio del producto"
+                    >
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit" style="margin: 5px">
+                <i class="fas fa-plus-circle"></i> Agregar producto
+              </button>
+              <button class="btn btn-secondary" type="reset" (click)="resetForm(productoForm)">
+                <i class="fas fa-sync-alt"></i> Borrar campos
+              </button>
+            </div>
+        </form>
+    </div>
+</div>
+
